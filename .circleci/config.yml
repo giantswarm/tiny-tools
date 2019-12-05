@@ -1,0 +1,12 @@
+version: 2.1
+orbs:
+  architect: giantswarm/architect@0.4.3
+
+workflows:
+  build:
+    jobs:
+      - architect/push-to-docker:
+          name: push-tiny-tools-to-quay
+          image: "quay.io/giantswarm/tiny-tools"
+          username_envar: "QUAY_USERNAME"
+          password_envar: "QUAY_PASSWORD"
